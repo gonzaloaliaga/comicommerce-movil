@@ -42,9 +42,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.gonzaloaliaga.model.Producto
-import com.example.gonzaloaliaga.ui.ProductViewModel
-import com.example.gonzaloaliaga.ui.UsuarioViewModel
-import io.reactivex.rxjava3.plugins.RxJavaPlugins.onError
+import com.example.gonzaloaliaga.data.products.ProductViewModel
+import com.example.gonzaloaliaga.data.users.UsuarioViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

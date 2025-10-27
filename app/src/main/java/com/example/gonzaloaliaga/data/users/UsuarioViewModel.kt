@@ -1,8 +1,7 @@
-package com.example.gonzaloaliaga.ui
+package com.example.gonzaloaliaga.data.users
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.gonzaloaliaga.data.users.UsuarioRepository
 import com.example.gonzaloaliaga.model.Usuario
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted

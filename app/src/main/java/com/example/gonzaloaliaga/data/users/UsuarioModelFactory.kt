@@ -1,10 +1,9 @@
-package com.example.gonzaloaliaga.ui
+package com.example.gonzaloaliaga.data.users
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.gonzaloaliaga.data.AppDatabase
-import com.example.gonzaloaliaga.data.users.UsuarioRepository
 import kotlin.getValue
 
 class UsuarioViewModelFactory(app: Application) : ViewModelProvider.Factory {

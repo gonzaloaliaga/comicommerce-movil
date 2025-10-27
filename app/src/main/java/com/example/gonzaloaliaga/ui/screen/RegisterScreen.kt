@@ -10,7 +10,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.gonzaloaliaga.ui.UsuarioViewModel
+import com.example.gonzaloaliaga.data.users.UsuarioViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

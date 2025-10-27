@@ -1,17 +1,21 @@
-package com.example.gonzaloaliaga.ui
+package com.example.gonzaloaliaga.data.products
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.gonzaloaliaga.model.Producto
-import com.example.gonzaloaliaga.data.products.ProductRepository
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class ProductViewModel(private val repo: ProductRepository): ViewModel() {
 
     // Lista observable desde la UI
     val productos: StateFlow<List<Producto>> =
-        repo.productos.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+        repo.productos.stateIn(viewModelScope, SharingStarted.Companion.WhileSubscribed(5_000), emptyList())
 
     private val _form = MutableStateFlow(ProductFormState())
     val form: StateFlow<ProductFormState> = _form.asStateFlow()

@@ -1,4 +1,5 @@
-package com.example.gonzaloaliaga.ui
+package com.example.gonzaloaliaga.data.products
+
 data class ProductFormState(
     val id: Long? = null,
     val nombre: String = "",

@@ -1,4 +1,4 @@
-package com.example.gonzaloaliaga.ui
+package com.example.gonzaloaliaga.data.users
 
 data class UserFormState(
     val id: Long? = null,

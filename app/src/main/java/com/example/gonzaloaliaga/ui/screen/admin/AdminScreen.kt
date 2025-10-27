@@ -1,8 +1,6 @@
 package com.example.gonzaloaliaga.ui.screen.admin
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -19,8 +17,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.gonzaloaliaga.ui.ProductViewModel
-import com.example.gonzaloaliaga.ui.UsuarioViewModel
+import com.example.gonzaloaliaga.data.products.ProductViewModel
+import com.example.gonzaloaliaga.data.users.UsuarioViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
