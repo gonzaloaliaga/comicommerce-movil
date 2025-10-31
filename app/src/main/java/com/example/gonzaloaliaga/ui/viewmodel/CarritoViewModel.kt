@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.gonzaloaliaga.data.cart.CarritoConProducto
 import com.example.gonzaloaliaga.data.repository.CarritoRepository
 import com.example.gonzaloaliaga.model.Producto
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -18,12 +19,20 @@ class CarritoViewModel(
     private val _carrito = MutableStateFlow<List<CarritoConProducto>>(emptyList())
     val carrito: StateFlow<List<CarritoConProducto>> = _carrito.asStateFlow()
 
+    private var carritoJob: Job? = null
+
     init {
         viewModelScope.launch {
             uservm.currentUser.collect { user ->
+                // Cancelar la colección anterior si existía
+                carritoJob?.cancel()
+                _carrito.value = emptyList() // limpiar carrito anterior
+
                 if (user != null) {
-                    repository.obtenerCarrito(user.id).collect { items ->
-                        _carrito.value = items
+                    carritoJob = viewModelScope.launch {
+                        repository.obtenerCarrito(user.id).collect { items ->
+                            _carrito.value = items
+                        }
                     }
                 }
             }

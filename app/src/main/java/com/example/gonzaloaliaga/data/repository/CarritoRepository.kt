@@ -15,7 +15,14 @@ class CarritoRepository(private val dao: CartDao) {
         if (existente != null) {
             dao.update(existente.copy(cantidad = existente.cantidad + 1))
         } else {
-            dao.insert(CartItemEntity(usuarioId = usuarioId, productoId = productoId, cantidad = 1))
+            dao.insert(
+                CartItemEntity(
+                    id = 0,
+                    usuarioId = usuarioId,
+                    productoId = productoId,
+                    cantidad = 1
+                )
+            )
         }
     }
 
