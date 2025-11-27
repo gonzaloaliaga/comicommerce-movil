@@ -38,7 +38,7 @@ fun ProductDetailScreen(
     prodvm: ProductViewModel,
     cartvm: CarritoViewModel,
     navController: NavController,
-    productId: String   // ← AHORA STRING
+    productId: String
 ) {
     val productos by prodvm.productos.collectAsState()
     val producto = productos.find { it.id == productId }
