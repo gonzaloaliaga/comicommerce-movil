@@ -104,15 +104,15 @@ fun ShoppingCartScreen(
                             Column {
 
                                 IconButton(
-                                    onClick = { cartvm.disminuir(producto.id!!) }
-                                ) {
-                                    Icon(Icons.Default.KeyboardArrowDown, "Restar")
-                                }
-
-                                IconButton(
                                     onClick = { cartvm.agregar(producto.id!!) }
                                 ) {
                                     Icon(Icons.Default.KeyboardArrowUp, "Sumar")
+                                }
+
+                                IconButton(
+                                    onClick = { cartvm.disminuir(producto.id!!) }
+                                ) {
+                                    Icon(Icons.Default.KeyboardArrowDown, "Restar")
                                 }
 
                                 IconButton(
