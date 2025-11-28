@@ -42,8 +42,9 @@ class ProductRepository(private val api: ProductApi) {
             img = img
         )
 
-        return api.create(nuevo)
+        val creado = api.create(nuevo)
         refrescar()
+        return creado
     }
 
     suspend fun actualizar(
@@ -70,9 +71,10 @@ class ProductRepository(private val api: ProductApi) {
             categoria = categoria,
             img = img
         )
-        
-        return api.update(id, actualizado)
+
+        val resultado = api.update(id, actualizado)
         refrescar()
+        return resultado
     }
 
     suspend fun eliminar(id: String) {

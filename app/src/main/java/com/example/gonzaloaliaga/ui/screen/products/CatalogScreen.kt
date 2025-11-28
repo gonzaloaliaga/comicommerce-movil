@@ -31,6 +31,10 @@ fun CatalogScreen(
     cartvm: CarritoViewModel,
     navController: NavController
 ) {
+    LaunchedEffect(Unit) {
+        prodvm.refrescarDesdeUI()
+    }
+
     val productos by prodvm.productos.collectAsState()
     val productosPorCategoria = productos.groupBy { it.categoria }
 

@@ -26,6 +26,10 @@ class ProductViewModel(private val repo: ProductRepository) : ViewModel() {
         }
     }
 
+    fun refrescarDesdeUI() = viewModelScope.launch {
+        repo.refrescar()
+    }
+
     // -----------------------------
     // FORMULARIO
     // -----------------------------
